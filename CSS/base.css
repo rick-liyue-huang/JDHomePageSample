@@ -1,0 +1,330 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+    /*去除 点击时候产生的边框*/
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    /*select 下拉列表，*/
+    vertical-align: middle;
+    /*垂直方向居中*/
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+    /*禁止文本框拖拽*/
+}
+
+/*防止多行文本框拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+    /*去除3px缝隙*/
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;			/*合并外边线*/
+}
+
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";	/*宋体，Unicode，统一码*/
+    /* 加粗 字体大小/行高  样式 */
+    color: #666;
+    background: #fff
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    /*清除 下划线*/
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+    /*继承父类元素的大小*/
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+    /*小标签可以做小图标*/
+    /*s del 删除线，  em i 倾斜， u ins 下划线*/
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+.hide {
+    display: none;
+}
+
+
+/* site-nav begin */
+
+    .site-nav {
+        height: 30px;
+        background-color: #f1f1f1;
+        line-height: 30px;
+    }
+
+    .site-nav-send, .site-nav-r .fore {
+        padding: 0 25px 0 10px;
+        /*background-color: pink;*/
+        position: relative;
+    }
+
+    .site-nav-send:hover {
+        background-color: #fff;
+    }
+
+    .site-nav-send i, .site-nav-r .fore i {
+        position: absolute;
+        top: 12px;
+        right: 5px;
+        font: 400 15px/15px consolas;
+        width: 15px;
+        height: 7px;
+        overflow: hidden;
+    }
+
+    .site-nav-send i s, .site-nav-r .fore i s{
+        position: absolute;
+        top:-6px;
+    }
+
+    .site-nav-r ul li {
+        float: left;
+        padding: 0 10px;
+    }
+
+    /*div span 1
+    .box .f 10
+    #box  100
+    <div style= ""> 1000
+    important 1/0 */
+
+    .site-nav-r .line {
+        width: 1px;
+        height: 12px;
+        background-color: #dddddd;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .site-nav-r .jd-tel {
+        padding-left: 25px;
+    }
+
+    .site-nav-r .jd-tel span {
+        position: absolute;
+        top: 5px;
+        left: 6px;
+        width: 15px;
+        height: 20px;
+        background: url("../Images/tel.png") no-repeat;
+    }
+
+/* site-nav end */
+
+
+
+/* top-banner begin */
+
+    .topbanner {
+        height: 80px;
+        background-color: #ff031a;
+
+    }
+    .tp {
+        position: relative;
+    }
+
+    .close-ban {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 19px;
+        height: 19px;
+        /*背景图片无法撑开元素，必须自己设置宽高*/
+        background: url("../Images/close-ban.png") no-repeat;
+    }
+
+    .close-ban:hover {
+        background-position: bottom;
+    }
+
+
+/* top-banner end */
+
+/*search begin*/
+    .search-logo {
+        width: 362px;
+        height: 100px;
+        float: left;
+        /*background-color: pink;*/
+    }
+    .logo-a {
+        display: block;
+        width: 270px;
+        height: 60px;
+        background: url("../Images/logo.png") no-repeat;
+        margin-top: 20px;
+        text-indent: -999999em;
+    }
+
+    .search-input {
+        width: 538px;
+        height: 61px;
+        float: left;
+        background-color: blue;
+    }
+    .search-car {
+        width: 139px;
+        height: 34px;
+        float: right;
+        border: 1px solid #dfdfdf;
+        margin: 25px 65px 0 0;
+        background-color: yellow;
+    }
+    .search-more {
+        width: 500px;
+        height: 28px;
+        float: left;
+        /*background-color: orange;*/
+        line-height: 28px;
+    }
+    .search-more a {
+        margin-right: 8px;
+    }
+
+
+
+
+/*search end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
