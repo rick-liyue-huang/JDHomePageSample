@@ -67,12 +67,12 @@
 <!-- site-nav part end-->
 
 <!-- top-banner part begin-->
-    <div class="topbanner">
+    <div class="topbanner" id="topBanner">
         <div class="w tp">
             <a href="#">
                 <img src="./Images/topbanner.jpg" alt="">
             </a>
-            <a href="#" class="close-ban"></a>
+            <a href="#" class="close-ban" id="closeBan"></a>
         </div>
     </div>
 <!-- top-banner part end-->
@@ -486,7 +486,25 @@
     </div>
 <!-- site-footer part end-->
 
+<script>
+    // get the event source
+    var closeBan = document.getElementById('closeBan');
+    var topBanner = document.getElementById('topBanner');
 
+//    bind the event
+    closeBan.onclick = function () {
+
+//        write the event code
+        topBanner.style.display = 'none'; // css 不用加引号。
+        /*
+        * 技术点： display 变为none,就是隐藏盒子，并且 不占与位置
+        * visibility: hidden, 隐藏盒子 但是 占用位置
+        * overflow: hidden, 隐藏超出盒子的部分
+        *
+        * 显示盒子： display： block, 或者 visibility：visible
+        * */
+    }
+</script>
 
 </body>
 </html>
