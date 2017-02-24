@@ -7,8 +7,45 @@
     <link rel="stylesheet" href="./CSS/index.css">
     <!--import the icon by link-->
     <link rel="shortcut icon" href="favicon.ico">
+
+    <style>
+        .mask {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            z-index: 100;
+            display: none;
+        }
+
+        .mask .login {
+            width: 400px;
+            height: 300px;
+            margin: 200px auto;
+            background-color: #fff;
+        }
+        .mask .closeMask {
+            float: right;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font: 400 20px/30px "simsun";
+            background-color: pink;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+
+<!--JD Modal begin -->
+    <div class="mask" id="mask">
+        <div class="login">
+            <span class="closeMask" id="closeMask">X</span>
+        </div>
+    </div>
+<!--JD Modal end-->
+
+
 
 <!-- site-nav part begin-->
     <div class="site-nav">
@@ -25,7 +62,7 @@
             <div class="fr site-nav-r">
                 <ul>
                     <li>
-                        <a href="#">你好，请登录</a>&nbsp
+                        <a href="#" id="loginA">你好，请登录</a>&nbsp
                         <a href="#" class="col-red">免费注册</a>
                     </li>
                     <li class="line"></li>
@@ -250,14 +287,14 @@
 <!--main part begin-->
     <div class="w main clearfix">
         <div class="main-slide">
-            <a href="#"><img src="./Images/newyear.jpg" alt=""></a>
+            <a href="#"><img src="./Images/newyear.jpg" id="img" alt=""></a>
             <ul class="circle">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li class="current">5</li>
-                <li>6</li>
+                <li class="current" id="li1">1</li>
+                <li id="li2">2</li>
+                <li id="li3">3</li>
+                <li id="li4">4</li>
+                <li id="li5">5</li>
+                <li id="li6">6</li>
             </ul>
             <div class="arrow">
                 <a href="javascript:;" class="arrow-left">&lt;</a>
@@ -503,7 +540,54 @@
         *
         * 显示盒子： display： block, 或者 visibility：visible
         * */
+    };
+
+//   deal with the main-slide by icon
+
+    var li1 = document.getElementById('li1');
+    var li2 = document.getElementById('li2');
+    var li3 = document.getElementById('li3');
+    var li4 = document.getElementById('li4');
+    var li5 = document.getElementById('li5');
+    var li6 = document.getElementById('li6');
+
+    var slideImg = document.getElementById('img');
+
+    li2.onclick = function () {
+        slideImg.src = "./Images/22.jpg";
+        li2.className = 'current';
+    };
+    li3.onclick = function () {
+        slideImg.src = "./Images/33.jpg";
+        this.className = 'current';
+    };
+    li4.onclick = function () {
+        slideImg.src = "./Images/44.jpg";
+        this.className = 'current';
+    };
+    li5.onclick = function () {
+        slideImg.src = "./Images/55.jpg";
+        this.className = 'current';
+    };
+    li6.onclick = function () {
+        slideImg.src = "./Images/66.jpg";
+        this.className = 'current';
+    };
+
+
+
+//    login Modal
+    var loginA = document.getElementById('loginA');
+    var mask = document.getElementById('mask');
+    var closeMask = document.getElementById('closeMask');
+
+    loginA.onclick = function () {
+        mask.style.display = 'block';
+    };
+    closeMask.onclick = function () {
+        mask.style.display = 'none';
     }
+
 </script>
 
 </body>
